@@ -215,7 +215,7 @@ header {
 
 /* NEW: Styles for the background video (moved out of .hero) */
 .hero-video {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     min-width: 100%;
@@ -224,7 +224,7 @@ header {
     height: auto;
     object-fit: cover;
     transform: translate(-50%, -50%);
-    z-index: 1; /* Inside .full-page-bg, so z-index: 1 is fine relative to its parent */
+    z-index: -1; /* Inside .full-page-bg, so z-index: 1 is fine relative to its parent */
 }
 
 /* NEW: Styles for the overlay (moved out of .hero) */
@@ -810,4 +810,5 @@ video {
     object-fit: cover;
     z-index: -1;
 }
+
 
