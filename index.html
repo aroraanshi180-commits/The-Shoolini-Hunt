@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Shoolini Hunt</title>
+    <link rel="stylesheet" href="assets/css/homepage.css" />
+</head>
+
+<body>
+    <!-- New wrapper to control layout for fixed header (This was from the previous step) -->
+    <div id="app-wrapper">
+        <header>
+            <!-- Header is now transparent and fixed position -->
+            <nav class="navbar">
+                <div class="nav-right">
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/maps.html">Map</a></li>
+                        <li><a href="/Attraction.html">Attractions</a></li>
+                        <li><a href="/Event.html">Events</a></li>
+                        <li><a href="/AboutUs.html">About Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="logo">
+                    <h1> The Shoolini Hunt</h1>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Hero section and Features are now inside <main> and share a common absolute background -->
+        <main>
+            <!-- NEW: Full Page Background Container - Placed at the top of <main> -->
+            <div class="full-page-bg">
+                <!-- Background Video -->
+                <video class="hero-video" autoplay loop muted playsinline>
+                    <source src="/assets/bghomepage.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <!-- Overlay for theme matching and text readability -->
+                <div class="hero-overlay"></div>
+            </div>
+            <!-- END FULL PAGE BG -->
+
+            <div class="hero">
+                <!-- Video and overlay elements removed from here -->
+
+                <div class="hero-text">
+                    <h1>Step into shoolini - Where every turn has a story</h1>
+                    <p>Between the whispers of hills and the laughter of halls,Shoolini breathes in stories untold.</p>
+                    <a href="/registartion.html" class="btn">Start the Hunt</a>
+                </div>
+            </div>
+
+            <section class="features">
+                <!-- Background is now handled by the .full-page-bg -->
+                <h2>Explore the hills, feel the vibe, live the Shoolini way</h2>
+                <div class="cards">
+                    <div class="card">
+                        <img src="https://shooliniuniversity.com/media/1721821924-qzz7e5z1wk271.jpg" alt="Campus Map" onerror="this.src='https://placehold.co/300x200/011a01/ffd84d?text=Campus+Map'">
+                        <h3><a href="/maps.html">Campus Map</a></h3>
+                        <p>Getting lost is just another way to find something new at shoolini.</p>
+                    </div>
+
+                    <div class="card">
+                        <img src="https://shooliniuniversity.com/blog/wp-content/uploads/2023/03/Jatoli-Shiv-Temple-1024x772.jpg" alt="Attractions" onerror="this.src='https://placehold.co/300x200/011a01/ffd84d?text=Attractions'">
+                        <h3><a href="/Attraction.html">Top Attractions</a></h3>
+                        <p>Beauty, peace, and memories come alive.</p>
+                    </div>
+
+                    <div class="card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB22y_vfN6XLkrpHQHC0wVwgMIVoKEenPTkw&s" alt="Events" onerror="this.src='https://placehold.co/300x200/011a01/ffd84d?text=Events'">
+                        <h3><a href="/Event.html"> Events & Culture</a></h3>
+                        <p>Join the rhythm, line the spirit, culture never sleeps.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>The Shoolini Hunt</h4>
+                    <p>Discover the secrets, culture, and nature of the campus and surrounding hills. Your adventure starts here.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/maps.html">Campus Map</a></li>
+                        <li><a href="/Attraction.html">Local Attractions</a></li>
+                        <li><a href="/Event.html">Upcoming Events</a></li>
+                        <li><a href="/AboutUs.html">Meet the Team</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p>Email: info@shoolinihunt.com</p>
+                    <p>Solan, Himachal Pradesh, India</p>
+                </div>
+            </div>        </footer>
+        </footer>
+    </div>
+</body>
+
+</html>
