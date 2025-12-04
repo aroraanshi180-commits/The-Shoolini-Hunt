@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Shoolini Hunt</title>
+    <link rel="stylesheet" href="./homepage.css" />
+</head>
+
+<body>
+    <!-- New wrapper to control layout for fixed header (This was from the previous step) -->
+    <div id="app-wrapper">
+        <header>
+            <!-- Header is now transparent and fixed position -->
+            <nav class="navbar">
+                <div class="nav-right">
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/maps.html">Map</a></li>
+                        <li><a href="/Attraction.html">Attractions</a></li>
+                        <li><a href="/Event.html">Events</a></li>
+                        <li><a href= "/FAQ.html">FAQ</a></li>
+                        <li><a href="/AboutUs.html">About Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="logo">
+                    <h1> The Shoolini Hunt</h1>
+                </div>
+            </nav>
+        </header>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #e8f5e9, #f3e5f5);
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 20px;
+      animation: fadeDown 1s ease;
+    }
+
+    header h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4rem;
+      color: #2e7d32;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #555;
+    }
+
+    .faq-container {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .faq-card {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      transform: translateY(30px);
+      opacity: 0;
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .faq-card:hover {
+      transform: scale(1.02);
+    }
+
+    .faq-question {
+      padding: 20px 30px;
+      background: #2e7d32;
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .faq-question::after {
+      content: '+';
+      position: absolute;
+      right: 30px;
+      font-size: 1.8rem;
+      transition: transform 0.3s;
+    }
+
+    .faq-card.active .faq-question::after {
+      content: '-';
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      background: #f9f9f9;
+      color: #444;
+      padding: 0 30px;
+      transition: all 0.5s ease;
+    }
+
+    .faq-card.active .faq-answer {
+      max-height: 300px;
+      padding: 20px 30px;
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #2e7d32;
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>FAQs</h1>
+    <p>Everything you need to know about <strong>The Shoolini Hunt</strong> 🌿</p>
+  </header>
+
+  <section class="faq-container">
+    <div class="faq-card">
+      <div class="faq-question">1. What is The Shoolini Hunt?</div>
+      <div class="faq-answer">The Shoolini Hunt is an exciting interactive itinerary project that helps students explore Shoolini University’s best attractions and events.</div>
+    </div>
+
+    <div class="faq-card">
+      <div class="faq-question">2. How can I start the hunt?</div>
+      <div class="faq-answer">You can start by clicking the “Start the Hunt” button on the homepage. It will guide you through all activities and spots step-by-step.</div>
+    </div>
+
+    <div class="faq-card">
+      <div class="faq-question">3. Do I need to register?</div>
+      <div class="faq-answer">Registration is not required for browsing, but participants in live campus hunts may need to sign up with their student ID.</div>
+    </div>
+
+    <div class="faq-card">
+      <div class="faq-question">4. Can I use this on mobile?</div>
+      <div class="faq-answer">Absolutely! The Shoolini Hunt is mobile-friendly and works perfectly on phones, tablets, and desktops.</div>
+    </div>
+
+    <div class="faq-card">
+      <div class="faq-question">5. Are the locations accurate?</div>
+      <div class="faq-answer">Yes, the interactive map is designed based on the actual Shoolini campus layout to help you navigate easily.</div>
+    </div>
+
+    <div class="faq-card">
+      <div class="faq-question">6. Can I contribute photos or content?</div>
+      <div class="faq-answer">Yes! Students can submit their photos or short experiences for inclusion in future updates of The Shoolini Hunt.</div>
+    </div>
+
+    <div class="faq-card">
+      <div class="faq-question">7. Who designed The Shoolini Hunt?</div>
+      <div class="faq-answer">The Shoolini Hunt is designed by students as part of a creative web project showcasing Shoolini University’s culture and beauty.</div>
+    </div>
+
+    <div class="faq-card">
+      <div class="faq-question">8. How often is the site updated?</div>
+      <div class="faq-answer">The website is updated each semester with new campus attractions, events, and student-led experiences.</div>
+    </div>
+
+    <div class="faq-card">
+      <div class="faq-question">9. Can I share this itinerary?</div>
+      <div class="faq-answer">Yes! You can share the link with friends or family interested in exploring Shoolini University online.</div>
+    </div>
+
+    <div class="faq-card">
+      <div class="faq-question">10. Is there a contact for help?</div>
+      <div class="faq-answer">You can reach out to the student web team or visit the IT Block for any technical assistance or queries.</div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Part of <strong>The Shoolini Hunt</strong> | <a href="index.html">Return Home</a></p>
+  </footer>
+
+  <script>
+    const faqCards = document.querySelectorAll('.faq-card');
+    faqCards.forEach(card => {
+      card.addEventListener('click', () => {
+        card.classList.toggle('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
