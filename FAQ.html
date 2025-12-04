@@ -1,17 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="faqs-body">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Shoolini Hunt</title>
-    <link rel="stylesheet" href="./homepage.css" />
+  <meta charset="UTF-8" />
+  <!-- Page title shown in browser tab -->
+  <title>FAQs | Shoolini Experience</title>
+
+  <!-- Global site styles (navbar, footer, typography, etc.) -->
+  <link rel="stylesheet" href="homepage.css" />
+  <!-- FAQ‑specific styles (accordion look, FAQ background, etc.) -->
+  <link rel="stylesheet" href="/homepage.css" />
+
+  <!-- Make layout responsive on mobiles -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
-<body>
-    <!-- New wrapper to control layout for fixed header (This was from the previous step) -->
-    <div id="app-wrapper">
-        <header>
+<!-- Add class "faqs-body" so faqs.css can target this page only -->
+<body class="faqs-body">
+  <!-- =====================================
+       FIXED HEADER + NAVBAR (SITE-WIDE)
+       Reuse same navbar structure on every page
+       ===================================== -->
+  <header>
             <!-- Header is now transparent and fixed position -->
             <nav class="navbar">
                 <div class="nav-right">
@@ -30,189 +39,183 @@
                 </div>
             </nav>
         </header>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to bottom right, #e8f5e9, #f3e5f5);
-      color: #333;
-      overflow-x: hidden;
-    }
+  <!-- =====================================
+       MAIN CONTENT AREA
+       Contains the FAQ title + accordion questions
+       ===================================== -->
+  <main>
+    <!-- Center container that keeps FAQs within a readable width -->
+    <section class="content-container faq-container">
+      <!-- Main heading of the page -->
+      <h1 class="page-title">Frequently Asked Questions</h1>
 
-    header {
-      text-align: center;
-      padding: 60px 20px 20px;
-      animation: fadeDown 1s ease;
-    }
+      <!-- Short description of what this FAQ page covers -->
+      <p class="page-subtitle">
+        Answers to common questions about exploring Shoolini, campus life, and events.
+      </p>
 
-    header h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 4rem;
-      color: #2e7d32;
-      margin-bottom: 10px;
-    }
+      <!-- ==========================
+           SECTION 1: GENERAL
+           ========================== -->
+      <div class="faq-section">
+        <!-- Group title (category label for this group of questions) -->
+        <h2 class="faq-section-title">General</h2>
 
-    header p {
-      font-size: 1.2rem;
-      color: #555;
-    }
+        <!-- Single FAQ item.
+             <details> lets us create a built-in accordion without JS. -->
+        <details class="faq-item" open>
+          <!-- The clickable question line -->
+          <summary>Where is Shoolini University located?</summary>
+          <!-- The answer that appears when the item is expanded -->
+          <p>
+            Shoolini University is located near Solan in Himachal Pradesh, surrounded by hills and pine forests, about 60–70 km from Chandigarh.
+          </p>
+        </details>
 
-    .faq-container {
-      max-width: 900px;
-      margin: 50px auto;
-      padding: 0 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
+        <!-- Another FAQ item in the same section -->
+        <details class="faq-item">
+          <summary>How can I reach the campus?</summary>
+          <p>
+            You can reach the campus by road from Solan or Dharampur via taxi, cab, or local bus, and the nearest major railway station and airport are at Chandigarh.
+          </p>
+        </details>
 
-    .faq-card {
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      overflow: hidden;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      transform: translateY(30px);
-      opacity: 0;
-      animation: fadeUp 1s ease forwards;
-    }
+        <details class="faq-item">
+          <summary>Do I need prior permission to visit the campus?</summary>
+          <p>
+            Visitors are usually allowed during working hours, but it is recommended to inform the admission or reception desk in advance, especially for group visits.
+          </p>
+        </details>
+      </div>
 
-    .faq-card:hover {
-      transform: scale(1.02);
-    }
+      <!-- ==========================
+           SECTION 2: CAMPUS EXPERIENCE
+           ========================== -->
+      <div class="faq-section">
+        <h2 class="faq-section-title">Campus Experience</h2>
 
-    .faq-question {
-      padding: 20px 30px;
-      background: #2e7d32;
-      color: #fff;
-      font-size: 1.3rem;
-      font-weight: 500;
-      position: relative;
-    }
+        <details class="faq-item">
+          <summary>What are the must‑visit spots on campus?</summary>
+          <p>
+            Popular spots include the central plaza, library area, hostels with valley views, sports grounds, and various themed corners featured on the Attractions page.
+          </p>
+        </details>
 
-    .faq-question::after {
-      content: '+';
-      position: absolute;
-      right: 30px;
-      font-size: 1.8rem;
-      transition: transform 0.3s;
-    }
+        <details class="faq-item">
+          <summary>Can I explore the campus on my own?</summary>
+          <p>
+            Visitors can walk around most common areas, but some academic or residential zones may be restricted, so always follow directions from university staff or security.
+          </p>
+        </details>
 
-    .faq-card.active .faq-question::after {
-      content: '-';
-      transform: rotate(180deg);
-    }
+        <details class="faq-item">
+          <summary>Is there a campus map available?</summary>
+          <p>
+            A basic campus layout is highlighted on the homepage and Attractions sections, and visitors can request an updated map or guidance at the main reception.
+          </p>
+        </details>
+      </div>
 
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      background: #f9f9f9;
-      color: #444;
-      padding: 0 30px;
-      transition: all 0.5s ease;
-    }
+      <!-- ==========================
+           SECTION 3: EVENTS & CULTURE
+           ========================== -->
+      <div class="faq-section">
+        <h2 class="faq-section-title">Events &amp; Culture</h2>
 
-    .faq-card.active .faq-answer {
-      max-height: 300px;
-      padding: 20px 30px;
-    }
+        <details class="faq-item">
+          <summary>How can I know about upcoming events?</summary>
+          <p>
+            Major fests, cultural shows, and competitions are listed on the Events page and are also announced through official university channels and social media.
+          </p>
+        </details>
 
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+        <details class="faq-item">
+          <summary>Can visitors attend university events?</summary>
+          <p>
+            Many flagship events are open to guests, but some require prior registration, passes, or invitations, so always check details on the Events page.
+          </p>
+        </details>
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+        <details class="faq-item">
+          <summary>Are there student clubs and societies on campus?</summary>
+          <p>
+            The campus hosts multiple clubs for culture, technical activities, entrepreneurship, and sports, which actively participate in events and festivals round the year.
+          </p>
+        </details>
+      </div>
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: #2e7d32;
-      color: #fff;
-      font-size: 1rem;
-    }
+      <!-- ==========================
+           SECTION 4: STAY & FACILITIES
+           ========================== -->
+      <div class="faq-section">
+        <h2 class="faq-section-title">Stay &amp; Facilities</h2>
 
-    footer a {
-      color: #fff;
-      text-decoration: underline;
-    }
-  </style>
-</head>
-<body>
+        <details class="faq-item">
+          <summary>Is on‑campus accommodation available for visitors?</summary>
+          <p>
+            Limited guest accommodation may be available for official visitors and parents during specific occasions, and it usually needs to be booked in advance.
+          </p>
+        </details>
 
-  <header>
-    <h1>FAQs</h1>
-    <p>Everything you need to know about <strong>The Shoolini Hunt</strong> 🌿</p>
-  </header>
+        <details class="faq-item">
+          <summary>What facilities can visitors access?</summary>
+          <p>
+            Visitors can generally access cafeterias, some open seating areas, and designated viewing points while academic buildings and hostels remain restricted.
+          </p>
+        </details>
 
-  <section class="faq-container">
-    <div class="faq-card">
-      <div class="faq-question">1. What is The Shoolini Hunt?</div>
-      <div class="faq-answer">The Shoolini Hunt is an exciting interactive itinerary project that helps students explore Shoolini University’s best attractions and events.</div>
-    </div>
+        <details class="faq-item">
+          <summary>Is photography allowed on campus?</summary>
+          <p>
+            Personal photography in open areas is usually fine, but professional shoots or drone usage may require special permission from the administration.
+          </p>
+        </details>
+      </div>
 
-    <div class="faq-card">
-      <div class="faq-question">2. How can I start the hunt?</div>
-      <div class="faq-answer">You can start by clicking the “Start the Hunt” button on the homepage. It will guide you through all activities and spots step-by-step.</div>
-    </div>
+      <!-- ==========================
+           SECTION 5: ADMISSIONS & CONTACT
+           ========================== -->
+      <div class="faq-section">
+        <h2 class="faq-section-title">Admissions &amp; Contact</h2>
 
-    <div class="faq-card">
-      <div class="faq-question">3. Do I need to register?</div>
-      <div class="faq-answer">Registration is not required for browsing, but participants in live campus hunts may need to sign up with their student ID.</div>
-    </div>
+        <details class="faq-item">
+          <summary>Where can I get information about courses and admissions?</summary>
+          <p>
+            Detailed information is available on the official Shoolini University website, and the admissions office can guide you on programs, eligibility, and application process.
+          </p>
+        </details>
 
-    <div class="faq-card">
-      <div class="faq-question">4. Can I use this on mobile?</div>
-      <div class="faq-answer">Absolutely! The Shoolini Hunt is mobile-friendly and works perfectly on phones, tablets, and desktops.</div>
-    </div>
-
-    <div class="faq-card">
-      <div class="faq-question">5. Are the locations accurate?</div>
-      <div class="faq-answer">Yes, the interactive map is designed based on the actual Shoolini campus layout to help you navigate easily.</div>
-    </div>
-
-    <div class="faq-card">
-      <div class="faq-question">6. Can I contribute photos or content?</div>
-      <div class="faq-answer">Yes! Students can submit their photos or short experiences for inclusion in future updates of The Shoolini Hunt.</div>
-    </div>
-
-    <div class="faq-card">
-      <div class="faq-question">7. Who designed The Shoolini Hunt?</div>
-      <div class="faq-answer">The Shoolini Hunt is designed by students as part of a creative web project showcasing Shoolini University’s culture and beauty.</div>
-    </div>
-
-    <div class="faq-card">
-      <div class="faq-question">8. How often is the site updated?</div>
-      <div class="faq-answer">The website is updated each semester with new campus attractions, events, and student-led experiences.</div>
-    </div>
-
-    <div class="faq-card">
-      <div class="faq-question">9. Can I share this itinerary?</div>
-      <div class="faq-answer">Yes! You can share the link with friends or family interested in exploring Shoolini University online.</div>
-    </div>
-
-    <div class="faq-card">
-      <div class="faq-question">10. Is there a contact for help?</div>
-      <div class="faq-answer">You can reach out to the student web team or visit the IT Block for any technical assistance or queries.</div>
-    </div>
-  </section>
+        <details class="faq-item">
+          <summary>How can I contact the university for visit‑related queries?</summary>
+          <p>
+            You can reach the university through the contact details provided on the official website or by calling the main reception for visit timings and guidance.
+          </p>
+        </details>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>Part of <strong>The Shoolini Hunt</strong> | <a href="index.html">Return Home</a></p>
-  </footer>
-
-  <script>
-    const faqCards = document.querySelectorAll('.faq-card');
-    faqCards.forEach(card => {
-      card.addEventListener('click', () => {
-        card.classList.toggle('active');
-      });
-    });
-  </script>
-
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>The Shoolini Hunt</h4>
+                    <p>Discover the secrets, culture, and nature of the campus and surrounding hills. Your adventure starts here.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/maps.html">Campus Map</a></li>
+                        <li><a href="/Attraction.html">Local Attractions</a></li>
+                        <li><a href="/Event.html">Upcoming Events</a></li>
+                        <li><a href="/AboutUs.html">Meet the Team</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p>Email: info@shoolinihunt.com</p>
+                    <p>Solan, Himachal Pradesh, India</p>
+                </div>
+            </div>        
+        </footer>
 </body>
 </html>

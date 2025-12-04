@@ -175,6 +175,7 @@ header {
 }
 
 
+
 /* A slightly different style for the register button to make it stand out */
 
 .btn-nav.register {
@@ -668,12 +669,23 @@ END OF "ABOUT US" STYLES
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
 }
 
+.team-member-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
 
 /* === Attractions Page Styles === */
 
+/* New background for Attractions page using your uploaded sunset road image */
 .attractions-body {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.shiksha.com/mediadata/images/articles/1679218661phpTYlbEn.jpeg') center/cover no-repeat fixed;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.75)),
+    url('/assets/atraction\ background\ .jpeg') center/cover no-repeat fixed;
+  color: #fff;
 }
+
 
 .attraction-grid {
     display: grid;
@@ -820,4 +832,175 @@ html {
 }
 
 
+/* FAQ PAGE STYLES */
+
+
+
+
+   /* ===============================
+   FAQ PAGE – LAYOUT & THEME
+   This file ONLY contains styles specific to the FAQs page.
+   It sits on top of your global styles defined in homepage.css.
+   =============================== */
+
+/* Apply a darker gradient background ONLY when the body has class "faqs-body".
+   This lets other pages keep their own backgrounds. */
+.faqs-body {
+  /* Vertical dark green gradient to match the rest of the site */
+  background: linear-gradient(to bottom, #020b02, #041c08);
+  color: #ffffff; /* Default text color for this page */
+}
+
+/* Main container that wraps all FAQ content.
+   We reuse .content-container from homepage.css, but refine for this page. */
+.faq-container {
+  max-width: 900px;         /* Keep FAQs in a readable column */
+  margin: 120px auto 60px;  /* Top margin accounts for fixed navbar; center horizontally */
+  padding: 0 20px 40px;     /* Left/right padding + bottom breathing room */
+}
+
+/* ===============================
+   TITLES / INTRO TEXT
+   =============================== */
+
+/* Main page title “Frequently Asked Questions”.
+   .page-title already has some styles in homepage.css; we add subtle tweaks here. */
+.faq-container .page-title {
+  text-align: center;       /* Center the heading */
+  margin-bottom: 10px;      /* Small space below main title */
+}
+
+/* Subtitle paragraph under the main title. */
+.faq-container .page-subtitle {
+  text-align: center;       /* Center the subtitle text */
+  max-width: 650px;         /* Make subtitle narrower for readability */
+  margin: 0 auto 30px;      /* Center with auto left/right and add bottom margin */
+  color: #dddddd;           /* Slightly softer white for less contrast */
+}
+
+/* ===============================
+   FAQ SECTIONS (GROUP HEADINGS)
+   Each block like "General", "Campus Experience", etc.
+   =============================== */
+
+/* Wrapper for each logical FAQ block. */
+.faq-section {
+  margin: 40px 0;           /* Space above and below each section group */
+  text-align: left;         /* Left-align content inside (questions/answers) */
+}
+
+/* Section title, e.g., "General", "Events & Culture". */
+.faq-section-title {
+  font-size: 1.6rem;        /* Slightly larger than normal text */
+  margin-bottom: 15px;      /* Space between section title and first question */
+  color: #ffd84d;           /* Use your theme yellow from homepage.css */
+  letter-spacing: 0.03em;   /* Tiny tracking for a cleaner heading look */
+}
+
+/* ===============================
+   FAQ ITEMS – ACCORDION (details/summary)
+   =============================== */
+
+/* Base card styling for each <details> FAQ item. */
+.faq-item {
+  background: rgba(1, 26, 1, 0.85);      /* Semi‑transparent dark green panel */
+  border-radius: 10px;                   /* Rounded corners for card feel */
+  padding: 14px 18px;                    /* Inner spacing for summary + answer */
+  margin-bottom: 12px;                   /* Gap between FAQ cards */
+  border: 1px solid rgba(255, 255, 255, 0.14); /* Subtle border to define edges */
+  transition: transform 0.2s ease,
+              box-shadow 0.2s ease,
+              border-color 0.2s ease;    /* Smooth hover/open transitions */
+}
+
+/* Slight elevation effect on hover to show interactivity. */
+.faq-item:hover {
+  transform: translateY(-2px);           /* Lift up slightly */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45); /* Soft drop shadow */
+  border-color: rgba(255, 216, 77, 0.5); /* Hint of yellow on hover */
+}
+
+/* Style the clickable question line (<summary>). */
+.faq-item summary {
+  cursor: pointer;                       /* Pointer cursor shows it is clickable */
+  font-weight: 600;                      /* Emphasize the question text */
+  font-size: 1rem;                       /* Base font size */
+  list-style: none;                      /* Remove default triangle bullet in some browsers */
+  outline: none;                         /* Remove default focus outline; we’ll handle focus below */
+  display: flex;                         /* Flex allows spacing between text and custom icon */
+  align-items: center;                   /* Vertically center text and icon */
+  justify-content: space-between;        /* Push icon to the far right */
+}
+
+/* Remove default summary marker in WebKit browsers (Chrome, Safari). */
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Add custom expand/collapse icon using a pseudo-element.
+   This gives us a “+” and “–” without extra HTML. */
+.faq-item summary::after {
+  content: "+";                          /* Default icon when closed */
+  font-weight: bold;                     /* Make the symbol stronger */
+  font-size: 1.2rem;                     /* Slightly bigger than text */
+  margin-left: 12px;                     /* Space between question text and icon */
+  color: #ffd84d;                        /* Use the theme yellow for visibility */
+}
+
+/* When <details> is open, change the icon to “–”. */
+.faq-item[open] summary::after {
+  content: "–";
+}
+
+/* Add a bit more emphasis when FAQ is open. */
+.faq-item[open] {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6); /* Stronger shadow for expanded item */
+  border-color: #ffd84d;                      /* Highlight border with theme yellow */
+}
+
+/* ===============================
+   ANSWER TEXT
+   =============================== */
+
+/* Style for the <p> inside <details>, which contains the answer. */
+.faq-item p {
+  margin-top: 10px;                    /* Gap between question line and answer text */
+  color: #e3e3e3;                      /* Softer white for comfortable reading */
+  line-height: 1.6;                    /* Increase line height for legibility */
+  font-size: 0.97rem;                  /* Tiny bit smaller than summary */
+}
+
+/* ===============================
+   ACCESSIBILITY & RESPONSIVENESS
+   =============================== */
+
+/* Focus state for keyboard users (when navigating with Tab).
+   Adds a clear outline around the summary when focused. */
+.faq-item summary:focus-visible {
+  outline: 2px solid #ffd84d;          /* Yellow outline for visibility */
+  outline-offset: 4px;                 /* Slight gap between outline and element */
+}
+
+/* Make everything breathe a bit more nicely on smaller screens. */
+@media (max-width: 600px) {
+  .faq-container {
+    margin: 100px 16px 40px;          /* Reduce side margins on mobile */
+    padding: 0 4px 30px;              /* Slightly tighter padding */
+  }
+
+  .faq-section {
+    margin: 30px 0;                   /* Smaller vertical gaps on mobile */
+  }
+
+  .faq-item {
+    padding: 12px 14px;               /* Slightly reduce inner padding */
+  }
+
+  .faq-section-title {
+    font-size: 1.4rem;                /* Slightly smaller headings for small screens */
+  }
+}
+ 
+    
+  
 
