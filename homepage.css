@@ -648,9 +648,14 @@ END OF "ABOUT US" STYLES
 
 /* === General Styles for Other Pages === */
 
+/* CHANGED: Increased margin-top to 120px to prevent header overlap */
 .content-container {
     max-width: 1200px;
-    margin: 40px auto;
+    /* CHANGED: 
+       Top margin: 120px (prevents header overlap)
+       Bottom margin: 120px (increases space above footer)
+    */
+    margin: 120px auto 120px auto; 
     padding: 20px;
     color: #fff;
     text-align: center;
@@ -689,8 +694,16 @@ END OF "ABOUT US" STYLES
 
 .attraction-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* CHANGED: Forced to 3 columns per your request */
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+}
+
+/* ADDED: Responsiveness for smaller screens (tablets) */
+@media (max-width: 1024px) {
+    .attraction-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
 }
 
 .attraction-card {
@@ -1000,7 +1013,3 @@ html {
     font-size: 1.4rem;                /* Slightly smaller headings for small screens */
   }
 }
- 
-    
-  
-

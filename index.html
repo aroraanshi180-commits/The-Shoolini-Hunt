@@ -6,13 +6,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Shoolini Hunt</title>
     <link rel="stylesheet" href="./homepage.css" />
+
+    <style>
+        /* 1. FIX THE VIDEO BACKGROUND */
+        /* Keeps the video locked in place while you scroll (Parallax effect) */
+        .full-page-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -1; /* Sends video to the back */
+            overflow: hidden;
+        }
+
+        /* 2. MAKE CONTENT SIT ON TOP */
+        main {
+            position: relative;
+            z-index: 2;
+        }
+        
+        footer {
+            position: relative;
+            z-index: 2;
+            margin-top: auto;
+        }
+
+        /* 3. RESPONSIVE LAYOUT (Mobile & Tablet) */
+        @media (max-width: 768px) {
+            
+            /* Adjust Hero Text for smaller screens */
+            .hero h1 {
+                font-size: 2.2rem; /* Smaller heading */
+            }
+            
+            .hero p {
+                font-size: 1rem;
+                padding: 0 20px;
+            }
+
+            /* Make Cards stack vertically */
+            .cards {
+                gap: 25px;
+                padding: 0 20px;
+                flex-direction: column; /* Stack cards */
+                align-items: center;
+            }
+
+            .card {
+                width: 100%; /* Full width */
+                max-width: 360px; /* Limit size */
+                min-height: auto;
+            }
+            
+            /* Add spacing to Features section so it doesn't look cramped */
+            .features {
+                padding-top: 60px;
+                padding-bottom: 60px;
+            }
+            
+            .features h2 {
+                font-size: 1.6rem;
+                margin-bottom: 30px;
+                padding: 0 10px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <!-- New wrapper to control layout for fixed header (This was from the previous step) -->
     <div id="app-wrapper">
         <header>
-            <!-- Header is now transparent and fixed position -->
             <nav class="navbar">
                 <div class="nav-right">
                     <ul>
@@ -20,51 +84,42 @@
                         <li><a href="/maps.html">Map</a></li>
                         <li><a href="/Attraction.html">Attractions</a></li>
                         <li><a href="/Event.html">Events</a></li>
-                        <li><a href= "/FAQ.html">FAQ</a></li>
+                        <li><a href="/FAQ.html">FAQ</a></li>
                         <li><a href="/AboutUs.html">About Us</a></li>
                     </ul>
                 </div>
 
                 <div class="logo">
-                    <h1> The Shoolini Hunt</h1>
+                    <h1>The Shoolini Hunt</h1>
                 </div>
             </nav>
         </header>
 
-        <!-- Hero section and Features are now inside <main> and share a common absolute background -->
         <main>
-            <!-- NEW: Full Page Background Container - Placed at the top of <main> -->
             <div class="full-page-bg">
-                <!-- Background Video -->
                 <video class="hero-video" autoplay loop muted playsinline>
                     <source src="/assets/bghomepage.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                <!-- Overlay for theme matching and text readability -->
                 <div class="hero-overlay"></div>
             </div>
-            <!-- END FULL PAGE BG -->
 
             <div class="hero">
-                <!-- Video and overlay elements removed from here -->
-
                 <div class="hero-text">
-                    <h1>Step into shoolini - Where every turn has a story</h1>
-                    <p>Between the whispers of hills and the laughter of halls,Shoolini breathes in stories untold.</p>
-                    <a href="/registartion.html" id = "startthehunt" class="btn">Start the Hunt</a>
-                    <script src="plainjs.js"></script>
+                    <h1>Step into Shoolini - Where every turn has a story</h1>
+                    <p>Between the whispers of hills and the laughter of halls, Shoolini breathes in stories untold.</p>
                     
+                    <a href="/registartion.html" id="startHuntLink" class="btn">Start the Hunt</a>
                 </div>
             </div>
 
             <section class="features">
-                <!-- Background is now handled by the .full-page-bg -->
                 <h2>Explore the hills, feel the vibe, live the Shoolini way</h2>
                 <div class="cards">
                     <div class="card">
                         <img src="https://shooliniuniversity.com/media/1721821924-qzz7e5z1wk271.jpg" alt="Campus Map" onerror="this.src='https://placehold.co/300x200/011a01/ffd84d?text=Campus+Map'">
                         <h3><a href="/maps.html">Campus Map</a></h3>
-                        <p>Getting lost is just another way to find something new at shoolini.</p>
+                        <p>Getting lost is just another way to find something new at Shoolini.</p>
                     </div>
 
                     <div class="card">
@@ -75,8 +130,8 @@
 
                     <div class="card">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB22y_vfN6XLkrpHQHC0wVwgMIVoKEenPTkw&s" alt="Events" onerror="this.src='https://placehold.co/300x200/011a01/ffd84d?text=Events'">
-                        <h3><a href="/Event.html"> Events & Culture</a></h3>
-                        <p>Join the rhythm, line the spirit, culture never sleeps.</p>
+                        <h3><a href="/Event.html">Events & Culture</a></h3>
+                        <p>Join the rhythm, live the spirit, culture never sleeps.</p>
                     </div>
                 </div>
             </section>
@@ -102,9 +157,11 @@
                     <p>Email: info@shoolinihunt.com</p>
                     <p>Solan, Himachal Pradesh, India</p>
                 </div>
-            </div>        
+            </div>
         </footer>
     </div>
+
+    <script src="plainjs.js"></script>
 </body>
 
 </html>
