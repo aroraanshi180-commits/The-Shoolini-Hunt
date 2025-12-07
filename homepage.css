@@ -692,17 +692,6 @@ html {
     scroll-behavior: smooth;
 }
 
-
-
-
-/* Use attached photo for login page background (login-page wraps the body) */
-.login-page .registration-page {
-    background-image: linear-gradient(rgba(199, 240, 233, 0.55), rgba(127, 211, 201, 0.55)), url('assets/login-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
 /* centre alignment in attraction page */
 .attraction-content {
     padding: 20px;
@@ -1080,4 +1069,5 @@ html {
         font-size: 2.2rem;
     }
 }
+
 
