@@ -485,22 +485,41 @@ footer {
     color: #07320a;
 }
 
+ /* ===============================
+   BUTTON STYLES (UPDATED FOR DARK THEME)
+   =============================== */
+
 .btn-submit {
     width: 100%;
-    background: linear-gradient(90deg, #ffd84d 0%, #ffb84d 100%);
-    color: #05310a;
+    /* Use the Shoolini Theme Yellow */
+    background: #888843; 
+    
+    /* Dark Green text ensures high readability */
+    color: rgb(17, 20, 17); 
+    
     border: none;
     padding: 12px 14px;
     border-radius: 10px;
     cursor: pointer;
     font-weight: 700;
-    box-shadow: 0 8px 18px rgba(255, 184, 77, 0.18);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    
+    /* CHANGE: Replaced the old "drop shadow" with a "Night Mode Glow" */
+    box-shadow: 0 0 12px rgba(255, 216, 77, 0.3); 
+    
+    transition: all 0.3s ease;
 }
 
 .btn-submit:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 14px 30px rgba(255, 184, 77, 0.22);
+    /* On hover, turn white for maximum brightness */
+    background: #b4b9b1; 
+    
+    /* Move up slightly */
+    transform: translateY(-3px); 
+    
+    /* Intesify the glow effect */
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.5); 
 }
 
 /* === General Styles for Other Pages === */
@@ -1070,4 +1089,130 @@ html {
     }
 }
 
+/* login page background*/
+/* ===============================
+   LOGIN & REGISTRATION STYLES
+   =============================== */
 
+.registration-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
+    position: relative;
+
+    /* NEW BACKGROUND IMAGE */
+    /* using quotes to handle the spaces in the filename */
+    background: url('./assets/login page .jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.form-container {
+    /* DARK GLASS EFFECT to match the night theme */
+    background-color: rgba(0, 10, 0, 0.75); /* Dark translucent green/black */
+    backdrop-filter: blur(10px); /* Blurs the trees behind the form for readability */
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Subtle white border */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6); /* Deep shadow for depth */
+
+    padding: 30px 40px;
+    border-radius: 15px;
+    width: 420px;
+    position: relative;
+    z-index: 2;
+    color: #fff;
+}
+
+/* OPTIONAL: Update inputs to blend better with the dark theme */
+.registration-form input {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 14px;
+    
+    /* Make inputs slightly translucent white */
+    background: rgba(255, 255, 255, 0.9); 
+    border: 1px solid transparent;
+    border-radius: 8px;
+    outline: none;
+    color: #07320a;
+    font-weight: 500;
+}
+
+/* Focus state for inputs */
+.registration-form input:focus {
+    background: #ffffff;
+    box-shadow: 0 0 8px rgba(255, 216, 77, 0.5); /* Yellow glow on focus */
+}
+
+/* Update the "Already a user?" text link color */
+.alt-action, .Alreadyuser {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #ddd;
+}
+
+.alt-action a, .Alreadyuser a {
+    color: #ffd84d; /* Theme Yellow */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.alt-action a:hover, .Alreadyuser a:hover {
+    text-decoration: underline;
+}
+/* ===============================
+   FIXED LOGIN & REGISTRATION STYLES
+   =============================== */
+
+/* 1. APPLY BACKGROUND TO THE WRAPPER (Your New Div/Body Class) */
+/* This ensures the tree image covers the whole screen, including the footer */
+.auth-body {
+    /* Set the background image here instead of the section */
+    background: url('./assets/login page .jpg') no-repeat center center fixed;
+    background-size: cover;
+    
+    /* Ensure it takes full height */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 2. MAKE THE INNER SECTIONS TRANSPARENT */
+/* We remove the background from here so the wrapper's image shows through */
+.registration-page {
+    background: transparent !important; /* Force removal of old gradients/images */
+    flex-grow: 1; /* Pushes footer to the bottom */
+}
+
+/* 3. DARK GLASS FORM CARD */
+.form-container {
+    background-color: rgba(0, 10, 0, 0.75); /* Dark translucent tint */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    color: #fff;
+    /* Ensure z-index is right */
+    position: relative; 
+    z-index: 2;
+}
+
+/* 4. DARK GLASS FOOTER */
+/* Now that the image is behind the footer, this glass effect will work */
+.auth-body footer {
+    background: rgba(0, 10, 0, 0.85); /* See-through dark green */
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    position: relative;
+    z-index: 2;
+    margin-top: auto;
+}
+
+/* Text adjustments for readability */
+.auth-body footer p, 
+.auth-body footer a, 
+.auth-body footer h4,
+.registration-page label {
+    color: #e0e0e0;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
