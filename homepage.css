@@ -968,11 +968,15 @@ html {
 
 /* 4. Elegant Typography - SMALLER HEADING */
 .about-title {
-    font-family: 'IM Fell English', serif;
-    font-size: 2.8rem; /* Reduced from 3.8rem */
-    color: #ffd84d; /* Theme Gold */
-    margin-bottom: 20px;
-    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    /* This applies the rough, antique font */
+    font-family: 'IM Fell English', serif; 
+    
+    /* This matches the 'Wicked' Yellow color */
+    color: #FCD116; 
+    
+    /* Optional: Makes it slightly larger to see the rough texture */
+    font-size: 2.4rem;
+    font-weight: normal; 
 }
 
 .meet-team-title {
@@ -1076,3 +1080,4 @@ html {
         font-size: 2.2rem;
     }
 }
+
